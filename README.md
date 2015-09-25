@@ -1,2 +1,4 @@
 # amen_pi
-Amen Break sequencer based on PI digits numbers.
+Javascript Amen Break sequencer based on PI digits numbers and the Web Audio API.
+
+
