@@ -1,1 +1,648 @@
 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AZOPCORP.COM || AMEN_PI </title>
+    <link rel="stylesheet" type="text/css" href=" http://azopcorp.com/stylesheets/frontstrap">
+    <link rel="stylesheet" type="text/css" href=" http://azopcorp.com/stylesheets/frontend">
+    <link rel="stylesheet" type="text/css" href=" css/amen_pi.css">
+
+    <script type="text/javascript" src="http://azopcorp.com/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="js/jqknob.js"></script>
+    <script type="text/javascript" src="js/calcPi.js"></script>
+    <script type="text/javascript" src="js/vumeter.js"></script>
+    <script type="text/javascript" src="js/bitcrusher.js"></script>
+    <script type="text/javascript" src="js/recorder.js"></script>
+    <script type="text/javascript" src="js/Core_app.js"></script>
+
+    <!--USE a google font if not running from AZOPCORP.COM (x-domain error)-->
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: {
+                families: ['Press+Start+2P::latin']
+            }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- AZOPCMS MENU -->
+  
+
+    <!--AMEN PI APP GUI START HERE-->
+
+    <div id="wrap-the-whole-shit">
+        <div id="contend-the-shit">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">AMEN_Pi
+                    
+                </h1>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-lg-12"> <pre id="log"></pre></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 right_border">
+                        <!--AMEN TAB-->
+                        <h3>Amen matrix</h3>
+                        <div id="kit_maker">
+
+                            <table cellpadding="15">
+
+                                <!-- row 1 -->
+                                <tr>
+                                    <td id="pi_0">
+                                        0
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_0" class="select select-style" id="slct_0">
+
+                                            <option selected="selected" value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_0"></button>
+                                        <script type="text/javascript">
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                                <!-- row 2 -->
+                                <tr>
+                                    <td id="pi_1">
+                                        1
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_1" class="select select-style" id="slct_1">
+
+                                            <option value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_1"></button>
+                                         <script type="text/javascript">
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                                <!-- row 3 -->
+                                <tr>
+                                    <td id="pi_2">
+                                        2
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_2" class="select select-style" id="slct_2">
+
+                                            <option value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_2"></button>
+                                         <script type="text/javascript">
+                                         $('#play_2').click(function(){
+                                            var val = $('#slct_2 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                                <!-- row 4 -->
+                                <tr>
+                                    <td id="pi3">
+                                        3
+
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_3" class="select select-style" id="slct_3">
+
+                                            <option value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_3"></button>
+                                         <script type="text/javascript">
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                                <!-- row 5 -->
+                                <tr>
+                                    <td id="pi_4">
+                                        4
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_4" class="select select-style" id="slct_4">
+
+                                            <option value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_4"></button>
+                                         <script type="text/javascript">
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                                <!-- row 6 -->
+                                <tr>
+                                    <td id="pi_5">
+                                        5
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_5" class="select select-style" id="slct_5">
+
+                                            <option value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_5"></button>
+                                         <script type="text/javascript">
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                                <!-- row 7 -->
+                                <tr>
+                                    <td id="pi_6">
+                                        6
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_6" class="select select-style" id="slct_6">
+
+                                            <option value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_6"></button>
+                                         <script type="text/javascript">
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                                <!-- row 8 -->
+                                <tr>
+                                    <td id="pi_7">
+                                        7
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_7" class="select select-style" id="slct_7">
+
+                                            <option value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_7"></button>
+                                         <script type="text/javascript">
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                                <!-- row 9 -->
+                                <tr>
+                                    <td id="pi_8">
+                                        8
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_8" class="select select-style" id="slct_8">
+
+                                            <option value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_8"></button>
+                                         <script type="text/javascript">
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                                <!-- row 10 -->
+                                <tr>
+                                    <td id="pi_9">
+                                        9
+                                    </td>
+                                    <td>
+
+                                        <select name="amen_select_9" class="select select-style" id="slct_9">
+
+                                            <option value="0">Amen Chop 0 </option>
+                                            <option value="1">Amen Chop 1</option>
+                                            <option value="2">Amen Chop 2</option>
+                                            <option value="3">Amen Chop 3</option>
+                                            <option value="4">Amen Chop 4</option>
+                                            <option value="5">Amen Chop 5</option>
+                                            <option value="6">Amen Chop 6</option>
+                                            <option value="7">Amen Chop 7</option>
+                                            <option value="8">Amen Chop 8</option>
+                                            <option value="9">Amen Chop 9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="play" id="play_9"> </button>
+                                         <script type="text/javascript">
+
+                                        </script>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+                        <script>
+                            function fillkit() {
+                                console.log("before " + kit);
+                                kit = $("#kit_maker select").map(function(i, el) {
+                                    return $(el).val();
+                                }).get();
+                                console.log("after " + kit);
+
+                            }
+
+                            function randomize() {
+                                $(".select.select-style").each(function() {
+                                    var options = $(this).children('option');
+                                    var random = Math.floor(options.length * (Math.random() % 1));
+
+                                    options.attr('selected', false).eq(random).attr('selected', true);
+
+                                });
+
+                            }
+                        </script>
+
+
+
+                        <button id="rdmz">randomize</button>
+                        <script type="text/javascript">
+                            $("#rdmz").click(function() {
+                                randomize();
+
+                            });
+                        </script>
+                        <button id="fill">Change</button>
+                        <script type="text/javascript">
+                            $("#fill").click(function() {
+                                fillkit();
+
+                            });
+                        </script>
+
+
+                    </div>
+
+                    <div class="col-lg-4 right_border">
+                        <h3>Pi Sequencer</h3>
+
+                        <form name="" id="" method="post" action="" enctype="text/plain" onsubmit="calcPI(this.t1.value);">
+                            Number of PI Digits:
+                            <br>
+
+                            <input type="text" name="t1" id="t1" value="169" size="25" maxlength="8">
+                            <br>
+
+
+                            <input type="button" value="RUN!" onclick="calcPI(this.form.t1.value); fillplaylist();">
+
+                        </form>
+
+
+
+
+
+                        <div id="Pi_Pattern">
+
+                            
+                        </div>
+                        </div>
+
+                        <div class="col-lg-4 right_border">
+                            <h3>Vu Meter</h3>
+
+                            <canvas id="meter" width="50" height="200"></canvas>
+
+                       
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class "col-lg-12 well">
+                            <h3>Controls</h3>
+                              <div class="control-block">
+                            <div>Trigger amen chop every:<br>
+                                <select onchange="noteResolution = this.selectedIndex;">
+                                    <option>16th notes</option>
+                                        <option>8th notes</option>
+                                            <option>Quarter notes</option></select>
+                            </div>
+                            </div>
+
+                            <div class="control-block">
+                            <label>tempo</label>
+                            <div id="tempostatus">180</div>
+                            <input class="knob" type="text" data-width="100" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="tempoSlider" data-min="10" data-max="999" value="180" data-step="1" >
+                           
+                            </div>
+                             <div class="control-block">
+                              
+                            <label>volume</label>
+                            <div id="volumestatus">1</div>
+                            <input class="knob" type="text" data-width="100" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="volumeSlider" data-min="0" data-max="1" value="1" data-step="0.01" >
+                           </div>
+                             <div class="control-block">
+                            <label>Pitch</label>
+                             <div id="pitchstatus">1</div>
+
+                            <input class="knob" type="text" data-width="100" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="pitchSlider" data-min="0.01" data-max="10" value="1" data-step="0.01" >
+                           
+                            </div>
+
+                           <div class="control-block">
+                                <button id="Play_amen" onclick="play();">play</button>
+                           </div>
+                                <!--Send control value to the app -->
+                            <script>
+                                $(function() {
+                                    $("#pitchSlider").knob({
+
+                                        change: function(value) {
+                                            setPitch(value.toFixed(2));
+
+                                        }
+
+                                    })
+
+                                    $("#volumeSlider").knob({
+
+                                        change: function(value) {
+                                            setVolume(value.toFixed(2));
+
+                                        }
+
+                                    })
+                                    $("#tempoSlider").knob({
+
+                                        change: function(value) {
+                                            setTempo(parseInt(value));
+
+                                        }
+
+                                    })
+
+                                });
+
+                                 $('#play_0').click(function(){
+                                            var val = $('#slct_0 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+                                 $('#play_1').click(function(){
+                                            var val = $('#slct_1 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+                                 $('#play_2').click(function(){
+                                            var val = $('#slct_2 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+                                 $('#play_3').click(function(){
+                                            var val = $('#slct_3 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+                                 $('#play_4').click(function(){
+                                            var val = $('#slct_4 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+                                 $('#play_5').click(function(){
+                                            var val = $('#slct_5 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+                                 $('#play_6').click(function(){
+                                            var val = $('#slct_6 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+                                 $('#play_7').click(function(){
+                                            var val = $('#slct_7 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+                                 $('#play_8').click(function(){
+                                            var val = $('#slct_8 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+                                 $('#play_9').click(function(){
+                                            var val = $('#slct_9 ').val();
+                                            
+                                            var x = getSampleObject(val);
+
+                                            
+                                            
+                                           playSound(x, 0);
+
+                                         });
+
+
+
+
+
+
+
+
+
+                            </script>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+</body>
+
+</html>
