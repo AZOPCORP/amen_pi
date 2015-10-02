@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -8,15 +7,21 @@
     <link rel="stylesheet" type="text/css" href=" http://azopcorp.com/stylesheets/frontend">
     <link rel="stylesheet" type="text/css" href=" css/amen_pi.css">
 
-    <script type="text/javascript" src="http://azopcorp.com/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+    <script type="text/javascript" src="http://azopcorp.com/assets/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/monkeypatch.js"></script>
     <script type="text/javascript" src="js/jqknob.js"></script>
     <script type="text/javascript" src="js/calcPi.js"></script>
     <script type="text/javascript" src="js/vumeter.js"></script>
+
     <script type="text/javascript" src="js/bitcrusher.js"></script>
     <script type="text/javascript" src="js/recorder.js"></script>
     <script type="text/javascript" src="js/Core_app.js"></script>
 
-    <!--USE a google font if not running from AZOPCORP.COM (x-domain error)-->
+
+
+    <!--USE the only 8 bit google font if not running from AZOPCORP.COM (avoid x-domain error for @font-face)-->
     <script type="text/javascript">
         WebFontConfig = {
             google: {
@@ -33,9 +38,15 @@
             s.parentNode.insertBefore(wf, s);
         })();
     </script>
+
+
     <style>
         body {
             font-family: 'Press Start 2P', cursive;
+        }
+        
+        #icon_notes {
+            padding-bottom: 14px;
         }
     </style>
 
@@ -43,8 +54,8 @@
 
 <body>
 
-    <!-- AZOPCMS MENU -->
-  
+    <!-- AZOPCMS MENU 
+  <div id="myosc"></div>-->
 
     <!--AMEN PI APP GUI START HERE-->
 
@@ -52,31 +63,64 @@
         <div id="contend-the-shit">
 
             <div class="container">
-
-                <div class="row">
+ <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">AMEN_Pi
                     
                 </h1>
-                    </div>
-                    <div class="row">
-                        
-                        <div class="col-lg-12"> <pre id="log"></pre></div>
-                    </div>
+<div class="minilabel">AN AMEN BREAK SEQUENCER BASED ON THE DIGITS OF PI</div>
+               
+                <br>
+                  <div id="visualizator">  
+                     
+                            <canvas id="vizu" width="250" height="250"></canvas>
+             <div id="info" ></div>
+                            </div>
+
                 </div>
 
+  </div>
+
+<br>
                 <div class="row">
-                    <div class="col-lg-4 right_border">
-                        <!--AMEN TAB-->
-                        <h3>Amen matrix</h3>
-                        <div id="kit_maker">
 
-                            <table cellpadding="15">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#AMEN_MATRIX" aria-controls="AMEN_MATRIX" role="tab" data-toggle="tab">AMEN_MATRIX</a></li>
+                        <li role="presentation"><a href="#PI_SEQUENCER" aria-controls="PI_SEQUENCER" role="tab" data-toggle="tab">PI_SEQUENCER</a></li>
+                        <li role="presentation"><a href="#CONTROLS" aria-controls="CONTROLS" role="tab" data-toggle="tab">CONTROLS</a></li>
+                        <li role="presentation"><a href="#ABOUT" aria-controls="ABOUT" role="tab" data-toggle="tab">ABOUT</a></li>
+                    </ul>
 
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="AMEN_MATRIX">
+                            <br>
+                     <h4>AMEN_MATRIX</h4>
+                            <br>
+
+
+
+
+
+
+
+
+
+
+
+
+ <div id="kit_maker">
+
+                        
+<br>
+
+                            <table id="amen_matrix">
+                              <tbody>
                                 <!-- row 1 -->
-                                <tr>
-                                    <td id="pi_0">
-                                        0
+                                <tr  class="table_row">
+                                    <td id="pi_0" class="cell_padding">
+                                        <b>0</b>
                                     </td>
                                     <td>
 
@@ -103,9 +147,9 @@
                                 </tr>
 
                                 <!-- row 2 -->
-                                <tr>
-                                    <td id="pi_1">
-                                        1
+                                <tr  class="table_row">
+                                    <td id="pi_1" class="cell_padding">
+                                       <b> 1</b>
                                     </td>
                                     <td>
 
@@ -132,9 +176,9 @@
                                 </tr>
 
                                 <!-- row 3 -->
-                                <tr>
-                                    <td id="pi_2">
-                                        2
+                                <tr  class="table_row">
+                                    <td id="pi_2" class="cell_padding">
+                                       <b> 2</b>
                                     </td>
                                     <td>
 
@@ -171,9 +215,9 @@
                                 </tr>
 
                                 <!-- row 4 -->
-                                <tr>
-                                    <td id="pi3">
-                                        3
+                                <tr  class="table_row">
+                                    <td id="pi3" class="cell_padding"> 
+                                        <b>3</b>
 
                                     </td>
                                     <td>
@@ -201,9 +245,9 @@
                                 </tr>
 
                                 <!-- row 5 -->
-                                <tr>
-                                    <td id="pi_4">
-                                        4
+                                <tr  class="table_row">
+                                    <td id="pi_4" class="cell_padding">
+                                       <b> 4</b>
                                     </td>
                                     <td>
 
@@ -230,9 +274,9 @@
                                 </tr>
 
                                 <!-- row 6 -->
-                                <tr>
-                                    <td id="pi_5">
-                                        5
+                                <tr  class="table_row">
+                                    <td id="pi_5" class="cell_padding">
+                                      <b>  5 </b>
                                     </td>
                                     <td>
 
@@ -259,9 +303,9 @@
                                 </tr>
 
                                 <!-- row 7 -->
-                                <tr>
-                                    <td id="pi_6">
-                                        6
+                                <tr  class="table_row">
+                                    <td id="pi_6" class="cell_padding">
+                                     <b>   6</b>
                                     </td>
                                     <td>
 
@@ -288,9 +332,9 @@
                                 </tr>
 
                                 <!-- row 8 -->
-                                <tr>
-                                    <td id="pi_7">
-                                        7
+                                <tr  class="table_row">
+                                    <td id="pi_7" class="cell_padding">
+                                       <b> 7</b>
                                     </td>
                                     <td>
 
@@ -317,9 +361,9 @@
                                 </tr>
 
                                 <!-- row 9 -->
-                                <tr>
-                                    <td id="pi_8">
-                                        8
+                                <tr  class="table_row">
+                                    <td id="pi_8" class="cell_padding">
+                                       <b> 8</b>
                                     </td>
                                     <td>
 
@@ -346,9 +390,9 @@
                                 </tr>
 
                                 <!-- row 10 -->
-                                <tr>
-                                    <td id="pi_9">
-                                        9
+                                <tr  class="table_row">
+                                    <td id="pi_9" class="cell_padding">
+                                     <b>   9</b>
                                     </td>
                                     <td>
 
@@ -373,11 +417,10 @@
                                         </script>
                                     </td>
                                 </tr>
-
+</tbody>
                             </table>
-                        </div>
-
-                        <script>
+<div class="matrix_buttons">
+ <script>
                             function fillkit() {
                                 console.log("before " + kit);
                                 kit = $("#kit_maker select").map(function(i, el) {
@@ -390,7 +433,7 @@
                             function randomize() {
                                 $(".select.select-style").each(function() {
                                     var options = $(this).children('option');
-                                    var random = Math.floor(options.length * (Math.random() % 1));
+                                    var random = Math.floor(Math.random() * 9) + 0 ;
 
                                     options.attr('selected', false).eq(random).attr('selected', true);
 
@@ -401,14 +444,15 @@
 
 
 
-                        <button id="rdmz">randomize</button>
+                        <button class="buttons" id="rdmz">RANDOMIZE</button>
                         <script type="text/javascript">
                             $("#rdmz").click(function() {
                                 randomize();
 
                             });
                         </script>
-                        <button id="fill">Change</button>
+                        <br>
+                        <button class="buttons" id="fill">LOAD!</button>
                         <script type="text/javascript">
                             $("#fill").click(function() {
                                 fillkit();
@@ -416,233 +460,613 @@
                             });
                         </script>
 
+                        </div>
 
-                    </div>
+             </div>          
 
-                    <div class="col-lg-4 right_border">
-                        <h3>Pi Sequencer</h3>
 
-                        <form name="" id="" method="post" action="" enctype="text/plain" onsubmit="calcPI(this.t1.value);">
+
+
+
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="PI_SEQUENCER">
+                            <br>
+                            <h4>PI_SEQUENCER</h4>
+                            <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
                             Number of PI Digits:
                             <br>
 
-                            <input type="text" name="t1" id="t1" value="169" size="25" maxlength="8">
-                            <br>
+                            <input id="Pi_input" type="text"   value="169"  maxlength="8" > <span id="time"></span>
+                         <div id="beware"></div>
 
 
-                            <input type="button" value="RUN!" onclick="calcPI(this.form.t1.value); fillplaylist();">
-
-                        </form>
+                                                    <script type="text/javascript">
 
 
+ 
+
+   
+
+
+
+
+
+$('#Pi_input').keypress(function(e) {
+    var a = [8];
+    var k = e.which;
+    
+    for (i = 48; i < 58; i++)
+        a.push(i);
+       
+    
+    if (!(a.indexOf(k)>=0) ) 
+        e.preventDefault();
+    
+
+});
+
+
+
+$("#Pi_input").on('input',function (e) {
+
+ var worker;
+    if (!worker == null){
+        worker.terminate();
+    }
+ worker = new Worker('./js/piworker.js');
+
+worker.addEventListener('message', function(e) {
+  $("#Pi_Pattern").text(e.data[0]);
+  $("#time").html('it took '+e.data[1]+'ms to compute this Pi Sequence!');  
+  fillplaylist();
+ // console.debug( e.data);
+}, false);
+
+ var x = $("#Pi_input").val();
+ var inplen = x.toString();
+var spinn = $("<span />");
+
+var spin = ['|','/','-','\\'];
+
+var i =0;    
+    setInterval(function() {
+if(i<spin.length){
+  spinn.html('computing ... ' + spin[i]);
+  i++;
+  
+}else{
+  i =0;
+}      
+        
+
+    },50);
+
+
+
+
+ $("#time").html(spinn);
+ if(inplen.length<5){
+
+    worker.postMessage([x]);
+          //  calcPI(x);
+           
+        }else{
+$('#info').html('BEWARE ENTERING A HUGE NUMBER CAN TAKE A LONG TIME TO COMPUTE! <br> For example 124000 digits takes over 2min40sec on an AMD FX - 4100 Quad-Core Processor at 2500.000 MHz<br><br><button class="buttons" id="ok" style="float:right;">OK!</button> ');
+
+    worker.postMessage([x]);
+  //calcPI(x);
+           
+$('#ok').click(function() {
+                        $("#info").html(" ");
+
+                      });
+
+
+
+        }
+
+
+   });
+
+
+
+                                </script>
+
+
+                     
+
+                         <br><br>
 
 
 
                         <div id="Pi_Pattern">
+                    
 
                             
                         </div>
-                        </div>
-
-                        <div class="col-lg-4 right_border">
-                            <h3>Vu Meter</h3>
-
-                            <canvas id="meter" width="50" height="200"></canvas>
-
-                       
-                        </div>
-
-                    </div>
 
 
-                    <div class="row">
-                        <div class "col-lg-12 well">
-                            <h3>Controls</h3>
-                              <div class="control-block">
-                            <div>Trigger amen chop every:<br>
-                                <select onchange="noteResolution = this.selectedIndex;">
-                                    <option>16th notes</option>
-                                        <option>8th notes</option>
-                                            <option>Quarter notes</option></select>
-                            </div>
-                            </div>
-
-                            <div class="control-block">
-                            <label>tempo</label>
-                            <div id="tempostatus">180</div>
-                            <input class="knob" type="text" data-width="100" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="tempoSlider" data-min="10" data-max="999" value="180" data-step="1" >
-                           
-                            </div>
-                             <div class="control-block">
-                              
-                            <label>volume</label>
-                            <div id="volumestatus">1</div>
-                            <input class="knob" type="text" data-width="100" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="volumeSlider" data-min="0" data-max="1" value="1" data-step="0.01" >
-                           </div>
-                             <div class="control-block">
-                            <label>Pitch</label>
-                             <div id="pitchstatus">1</div>
-
-                            <input class="knob" type="text" data-width="100" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="pitchSlider" data-min="0.01" data-max="10" value="1" data-step="0.01" >
-                           
-                            </div>
-
-                           <div class="control-block">
-                                <button id="Play_amen" onclick="play();">play</button>
-                           </div>
-                                <!--Send control value to the app -->
-                            <script>
-                                $(function() {
-                                    $("#pitchSlider").knob({
-
-                                        change: function(value) {
-                                            setPitch(value.toFixed(2));
-
-                                        }
-
-                                    })
-
-                                    $("#volumeSlider").knob({
-
-                                        change: function(value) {
-                                            setVolume(value.toFixed(2));
-
-                                        }
-
-                                    })
-                                    $("#tempoSlider").knob({
-
-                                        change: function(value) {
-                                            setTempo(parseInt(value));
-
-                                        }
-
-                                    })
-
-                                });
-
-                                 $('#play_0').click(function(){
-                                            var val = $('#slct_0 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-                                 $('#play_1').click(function(){
-                                            var val = $('#slct_1 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-                                 $('#play_2').click(function(){
-                                            var val = $('#slct_2 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-                                 $('#play_3').click(function(){
-                                            var val = $('#slct_3 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-                                 $('#play_4').click(function(){
-                                            var val = $('#slct_4 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-                                 $('#play_5').click(function(){
-                                            var val = $('#slct_5 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-                                 $('#play_6').click(function(){
-                                            var val = $('#slct_6 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-                                 $('#play_7').click(function(){
-                                            var val = $('#slct_7 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-                                 $('#play_8').click(function(){
-                                            var val = $('#slct_8 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-                                 $('#play_9').click(function(){
-                                            var val = $('#slct_9 ').val();
-                                            
-                                            var x = getSampleObject(val);
-
-                                            
-                                            
-                                           playSound(x, 0);
-
-                                         });
-
-
-
-
-
-
-
-
-
-                            </script>
 
 
                         </div>
+                        <div role="tabpanel" class="tab-pane" id="CONTROLS">
+                            <br>
+                            <h4>CONTROLS</h4>
+                            <br>
+
+ 
+
+
+
+
+
+
+
+
+
+<div class id="controls">
+
+
+    <div id="time_controls" class="control_holder">
+    <label>TIME</label>
+                 <div class="control-block">
+                   Grid:
+               
+                
+                    <select id="noteRez" style="height:25px; width:35px;">
+                        <option value="0" >16</option>
+                        <option value="1" >8</option>
+                        <option value="2">4</option>
+                    </select>
+                    <div id="icon_notes" style="height:40px; width:40px; "><img class="notes" src="http://azopcorp.com/assets/img/svg/img/16_pix_note.svg" alt="16notes" /></div>
+                    <div>
+                        <script>
+                            $('#noteRez').change(function() {
+                                var x = $('#noteRez').val();
+                                noteResolution = parseInt(x);
+
+
+                                if (noteResolution == 0) {
+
+                                    $('#icon_notes').html('<img class="notes" src="http://azopcorp.com/assets/img/svg/16_pix_note.svg"  alt="16notes" />');
+                                } else if (noteResolution == 1) {
+                                    $('#icon_notes').html('<img class="notes" src="http://azopcorp.com/assets/img/svg/8_pix_note.svg"  alt="8notes" />');
+
+                                } else {
+
+                                    $('#icon_notes').html('<img class="notes" src="http://azopcorp.com/assets/img/svg/4_pix_note.svg"  alt="4notes"/>');
+
+                                }
+
+                            });
+
+                        </script>
 
                     </div>
                 </div>
 
+                <div class="control-block">
+                    <label>tempo</label>
+                    <div id="tempostatus">180 BPM</div>
+                    <input class="knob" type="text" data-displayInput=false data-width="70" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="tempoSlider" data-min="10" data-max="999" value="180" data-step="1">
+
+                </div>
 
 
             </div>
-        </div>
 
+            <div id="pitch_and_volume-controls" class="control_holder">
+            <label>VOLUME & PITCH</label>
+                <div class="control-block">
+
+                    <label>volume</label>
+                    <div id="volumestatus">1</div>
+                    <input class="knob" type="text" data-displayInput=false data-width="70" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="volumeSlider" data-min="0" data-max="1" value="1" data-step="0.01">
+                </div>
+                <div class="control-block">
+                    <label>Pitch</label>
+                    <div id="pitchstatus">1</div>
+
+                    <input class="knob" type="text" data-displayInput=false data-width="70" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="pitchSlider" data-min="0.01" data-max="10" value="1" data-step="0.01">
+
+                </div>
+
+            </div>
+            <div id="filter_controls" class="control_holder">
+            <label>BIQUAD FILTER</label>
+                <div class="control-block">
+                    <button class="buttons" id="filter_switch">ON</button>
+                    <div id="filter_led" class="led"></div>
+                </div>
+                <div class="control-block">
+                    <label>filter type</label>
+                    <div id="Filtertypestatus">LOWPASS</div>
+                    <input class="knob" type="text" data-displayInput=false data-width="70" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="filtertypeSlider" data-min="1" data-max="9" value="1" data-step="1">
+                </div>
+
+                <div class="control-block">
+                    <label>cutoff</label>
+                    <div id="cutoffstatus">22000 Hz</div>
+                    <input class="knob" type="text" data-displayInput=false data-width="70" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="cutoffSlider" data-min="2" data-max="22000" value="22000" data-step="1">
+                </div>
+
+
+                <div class="control-block">
+                    <label>Q</label>
+                    <div id="Qstatus">1</div>
+                    <input class="knob" type="text" data-displayInput=false data-width="70" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="QSlider" data-min="0.0001" data-max="10" value="1" data-step="0.0001">
+                </div>
+                <div class="control-block">
+                    <label>Boost</label>
+                    <div id="booststatus">1</div>
+                    <input class="knob" type="text" data-displayInput=false data-width="70" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="boostSlider" data-min="-40" data-max="40" value="0" data-step="1">
+                </div>
+            </div>
+
+
+            <div id="bitcrusher_controls" class="control_holder">
+            <label>BITCRUSHER</label>
+                <div class="control-block">
+                    <button class="buttons" id="crusher_switch">ON</button>
+                    <div id="bitcrusher_led" class="led"></div>
+                </div>
+                <div class="control-block">
+                    <label>Bits</label>
+                    <div id="bitsstatus">1</div>
+                    <input class="knob" type="text" data-displayInput=false data-width="70" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="bitsSlider" data-min="1" data-max="16" value="1" data-step="0.1">
+                </div>
+                <div class="control-block">
+                    <label>Reduction</label>
+                    <div id="reductionstatus">1</div>
+                    <input class="knob" type="text" data-displayInput=false data-width="70" data-fgColor="#00ff00" data-bgColor="#005500" data-skin="tron" data-thickness=".4" id="reductionSlider" data-min="0" data-max="1" value="0" data-step="0.01">
+                </div>
+
+            </div>
+
+
+
+
+            <div id="playback_controls" class="control_holder">
+            <label>PLAYBACK CONTROLS</label>
+
+                <div class="control-block">
+                    <button class="buttons" id="Play_amen">PLAY</button>
+                    <div id="play_led" class="led"></div>
+                </div>
+
+                <div class="control-block">
+                    <button class="buttons" id="Record_amen">REC.</button>
+                    <div id="record_led" class="led"></div>
+                </div>
+
+            </div>
+            <!--Send control value to the app -->
+               
+            <div id="recording_box" class="control_holder">
+                <label>RECORDINGS:</label>
+                <ul id="recordingslist" ></ul>
+            </div>
+            <script>
+
+                            $(function() {
+
+
+                     
+
+
+                    $("#bitsSlider").knob({
+
+                        change: function(value) {
+                            setBits(value);
+
+                        }
+
+                    })
+                    $("#reductionSlider").knob({
+
+                        change: function(value) {
+                            setReduction(value);
+
+                        }
+
+                    })
+
+
+
+
+                    $("#cutoffSlider").knob({
+
+                        change: function(value) {
+                            setCutoff(parseInt(value));
+
+                        }
+
+                    })
+                    $("#boostSlider").knob({
+
+                        change: function(value) {
+                            setBoost(value.toFixed(0));
+
+                        }
+
+                    })
+
+                    $("#filtertypeSlider").knob({
+
+                        change: function(value) {
+                            selectFilter(parseInt(value));
+
+                        }
+
+                    })
+
+                    $("#QSlider").knob({
+
+                        change: function(value) {
+                            setQ(value.toFixed(2));
+
+                        }
+
+                    })
+
+
+
+                    $("#pitchSlider").knob({
+
+                        change: function(value) {
+                            setPitch(value.toFixed(2));
+
+                        }
+
+                    })
+
+                    $("#volumeSlider").knob({
+
+                        change: function(value) {
+                            setVolume(value.toFixed(2));
+
+                        }
+
+                    })
+                    $("#tempoSlider").knob({
+
+                        change: function(value) {
+                            setTempo(parseInt(value));
+
+                        }
+
+                    })
+
+                });
+                $("#filter_switch").click(function() {
+                    filterSwitch();
+
+
+                });
+
+                $("#crusher_switch").click(function() {
+                    crusherSwitch();
+
+
+                });
+
+
+                $("#Play_amen").click(function() {
+
+                    $('#info').html('IF IT MAKE NO SOUND BE SURE THAT YOU GENERATED A SEQUENCE OF PI DIGITS IN THE SEQUENCER <br><button class="buttons" id="ok" style="float:right;">OK!</button>');
+                    play();
+                    $('#ok').click(function() {
+                        $("#info").html(" ");
+
+                      });
+
+
+                });
+
+                $("#Record_amen").click(function() {
+
+                    record();
+
+                });
+
+
+                $('#play_0').click(function() {
+                    var val = $('#slct_0 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+                $('#play_1').click(function() {
+                    var val = $('#slct_1 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+                $('#play_2').click(function() {
+                    var val = $('#slct_2 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+                $('#play_3').click(function() {
+                    var val = $('#slct_3 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+                $('#play_4').click(function() {
+                    var val = $('#slct_4 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+                $('#play_5').click(function() {
+                    var val = $('#slct_5 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+                $('#play_6').click(function() {
+                    var val = $('#slct_6 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+                $('#play_7').click(function() {
+                    var val = $('#slct_7 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+                $('#play_8').click(function() {
+                    var val = $('#slct_8 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+                $('#play_9').click(function() {
+                    var val = $('#slct_9 ').val();
+
+                    var x = getSampleObject(val);
+
+
+
+                    playSound(x, 0);
+
+                });
+
+
+            </script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="ABOUT">
+                            <br>
+                            <h4>ABOUT</h4>
+                            <br>
+                            <p>
+                        AMEN_PI IS AN AMEN BREAK SEQUENCER BASED ON THE DIGITS OF PI OR AN AUTOMATIC BREAKCORE GENERATOR.<br>
+
+                        IT IS 100% CODED IN HTML5/JAVASCRIPT AND IT SHOULD RUN SMOOTH ON THE LATEST FIREFOX/CHROME VERSIONS.<br>
+
+                        (CODED FOR FIREFOX BUT RUN BETTER ON CHROME (｀ε´) ...)<br>
+
+                        IT IS BASED ON THE WEB AUDIO API AND USES JQUERY. / <a href="http://anthonyterrien.com/knob/">JQUERY KNOB</a> FOR CONTROLS.<br>
+                        THE CURRENT PI DIGITS IS SHOWN IS THE JS CANVAS<br>
+                        THE MATRIX WORKS LIKE THIS: FOR N < 10 PI DIGITS YOU CAN ASSIGN ONE OF THE 10 AMEN CHOPPED SAMPLE<BR>
+                        THE FIRST POSITION IS ZERO SO THE RANGE IS 0 TO 9 <BR>
+                        THE USER CAN GENERATE HIS OWN AMEN MATRIX OR LET IT BE GENERATED RANDOMLY<br>
+                        IT SHOULD RUN REALTIME EXCEPT THE BITCRUSHER THAT NEED A FEW MILLISECONDS TO BUFFER (KEEP IT IN MIND WHILE RECORDING).<BR>
+                        WHEN THE PI SEQUENCE IS COMPLETED IT LOOP BACK TO THE FIRST ONE (GIVING AN UNDEFINED POSITION THAT I COULD NOT  GET RID OFF, SORRY ...).<BR>
+                        THE FULL SOURCECODE IS AVAILABLE ON MY<a href="https://github.com/AZOPCORP/amen_pi/">GITHUB</a> IF YOU ARE CURIOUS.<BR>
+                        FEEL FREE TO FORK.<br>
+
+
+<br><br>                        
+                       HERE SOME USEFULL READINGS:  <br>
+
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">WEB AUDIO API REFERENCE</a><br>
+                        <a href="http://www.html5rocks.com/en/tutorials/audio/scheduling/">A TALE OF 2 CLOCKS</a><br>
+                        <a href="http://www.html5rocks.com/en/tutorials/workers/basics/">WEB WORKERS</a><br>
+
+<br><br>
+                        STOLLEN CODES:<br>
+
+                        <a href="https://github.com/mattdiamond/Recorderjs">RECORDER.JS</a><br>
+                        <a href="https://github.com/kevincennis/crusher">JAVASCRIPT BITCRUSHER</a><br>
+                        <a href="http://www.trans4mind.com/personal_development/JavaScript/longnumPiMachin.htm">JAVASCRIPT MACHIN FORMULA PI CALCULATOR</a>
+
+<br><br>
+
+ALL OTHER CODE BY AZOPCORP. COPYLEFT 2015.
+<br>
+
+<br>
+
+IF YOU LIKE/HATE THIS WORK PLEASE LEAVE ME A COMMENT OR EVEN BETTER SHARE IT TO YOUR FRIENDS.
+<BR>
+ALSO TRY MY OTHER APP: <a href="http://azopcorp.com/j2w">JPEG2WAV</a>.
+
+<br>
+HAVE FUN! <br>
+
+
+
+</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
