@@ -133,7 +133,7 @@ function setBoost(val){
 
 function selectFilter(val){
 
-console.log(parseInt(val));
+
 $("#Filtertypestatus").html(val);
    switch(val){
     case 1:
